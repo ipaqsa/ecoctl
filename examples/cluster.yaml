@@ -1,0 +1,23 @@
+name: paqsa-large
+version: v1.28.2
+ha: true
+internalLB: false
+projectID: 27520
+regionID: 8
+APILbFlavor: lb1-1-2
+networkID: e64a6286-0bac-42fb-aed1-f52d8dee6463
+subnetID: 83b996d2-9bc9-4420-a890-2b5e6f13723e
+masterOpts:
+    flavor: g1-standard-2-4
+    volumeSize: 10
+    volumeType: ssd_hiiops
+workerOpts:
+    - name: pool for logging
+      k8sRole: logging
+      setTaint: false
+      flavor: g1-standard-2-4
+      nodeCount: 2
+      volumeSize: 10
+      volumeType: ssd_hiiops
+      minNodeCount: 1
+      maxNodeCount: 2
