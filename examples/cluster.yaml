@@ -1,0 +1,22 @@
+name: paqsa
+version: v1.28.4
+authType: standard
+ha: false
+internalLB: false
+APILbFlavor: lb1-1-2
+networkID: b7ec938a-ced7-4ab9-85d6-9c128f8d231b
+subnetID: 1904602a-a08f-4609-9046-d9db4ff61055
+masterOpt:
+    flavor: g1-standard-2-4
+    volumeSize: 10
+    volumeType: ssd_hiiops
+workerOpts:
+    - name: pool for logging
+      role: logging
+      setTaint: false
+      flavor: g1-standard-2-4
+      nodeCount: 1
+      volumeSize: 10
+      volumeType: ssd_hiiops
+      minNodeCount: 1
+      maxNodeCount: 2

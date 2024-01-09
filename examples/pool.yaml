@@ -1,0 +1,9 @@
+name: pool for test
+role: logging
+setTaint: true
+flavor: g1-standard-2-4
+nodeCount: 2
+volumeSize: 10
+volumeType: ssd_hiiops
+minNodeCount: 2
+maxNodeCount: 3
