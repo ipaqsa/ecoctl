@@ -57,9 +57,4 @@ func InitEnvs() {
 	if GlobalOption.RegionID == "" {
 		log.Fatal("env ECO_REGION is required")
 	}
-	GlobalOption.UserID = os.Getenv("ECO_USER_ID")
-	if GlobalOption.UserID == "" {
-		log.Fatal("env ECO_USER_ID is required")
-	}
-
 }

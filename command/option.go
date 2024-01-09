@@ -18,7 +18,6 @@ type Opt struct {
 	AdminTTL string
 
 	EcoURL    string
-	UserID    string
 	ProjectID string
 	RegionID  string
 	APIKey    string
@@ -30,8 +29,7 @@ var GlobalOption Opt
 
 func NewClient() (*ecogo.Client, error) {
 	c, err := ecogo.New(nil, ecogo.SetURL(GlobalOption.EcoURL), ecogo.SetRegionID(GlobalOption.RegionID),
-		ecogo.SetProjectID(GlobalOption.ProjectID), ecogo.SetAPIKey(GlobalOption.APIKey),
-		ecogo.SetRequestHeaders(map[string]string{"User-ID": GlobalOption.UserID}))
+		ecogo.SetProjectID(GlobalOption.ProjectID), ecogo.SetAPIKey(GlobalOption.APIKey))
 	if err != nil {
 		fmt.Printf("err init eco client")
 		return nil, err
